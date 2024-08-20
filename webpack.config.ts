@@ -26,6 +26,3 @@ export default (env: BuildEnv) => {
   return config
 }
 
-// Установить плагин для создания css файла при сборке (minicss)
-// Отделить style loader и minicssLoader по условию
-// Сделать возможность использования как обычного css так и модулей
