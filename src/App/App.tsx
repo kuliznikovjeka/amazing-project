@@ -8,6 +8,7 @@ import Counter from '../components/Counter/Counter'
 import Loading from '../components/Loading/Loading'
 
 import { useTheme } from '../theme/useTheme'
+import { classNames } from '../helpers/classNames/classNames'
 
 const routerPaths = {
   about: 'about',
@@ -18,7 +19,7 @@ export default function App() {
   const {theme, toggleTheme} = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames('app', {}, [theme])}>
       <button onClick={toggleTheme}>Поменять тему</button>
       <Link to={routerPaths.base}>Главная</Link>
       <Link to={routerPaths.about}>О нас</Link>
