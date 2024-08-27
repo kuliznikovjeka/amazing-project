@@ -1,21 +1,20 @@
 import { Suspense } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 
-import { AboutPageLazy } from '../pages/AboutPage/AboutPageLazy'
-import { MainPageLazy } from '../pages/MainPage/MainPageLazy'
+import { AboutPageLazy } from 'pages/AboutPage'
+import { MainPageLazy } from 'pages/MainPage'
 
-import Counter from '../components/Counter/Counter'
-import Loading from '../components/Loading/Loading'
+import { Loading } from 'widgets/loading'
+import { classNames } from 'shared/lib/classNames/classNames'
 
-import { useTheme } from '../theme/useTheme'
-import { classNames } from '../helpers/classNames/classNames'
+import { useTheme } from './providers/ThemeProvider'
 
 const routerPaths = {
   about: 'about',
   base: '/'
 }
 
-export default function App() {
+export function App() {
   const {theme, toggleTheme} = useTheme();
 
   return (
@@ -29,7 +28,6 @@ export default function App() {
               <Route path={routerPaths.base} element={<MainPageLazy />} />
           </Routes>
         </Suspense>
-      <Counter />
     </div>
   )
 }
