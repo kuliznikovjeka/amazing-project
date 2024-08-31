@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { Loading } from "widgets/loading";
+import { Loading } from "widgets/Loading";
 import { routeConfig } from "shared/config/routeConfig";
 
 export function AppRouter() {
