@@ -1,8 +1,8 @@
-import { useTheme } from "App/providers/ThemeProvider";
-
-import { AppRoutes } from "shared/config/routeConfig/routeConfig";
-import { classNames } from "shared/lib/classNames/classNames";
+import { AppRoutes } from "shared/config/routeConfig";
+import { classNames } from "shared/lib/classNames";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink";
+
+import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 
 import cls from './Navbar.module.scss';
 
@@ -12,7 +12,6 @@ interface NavbarProps {
 
 export function Navbar(props: NavbarProps) {
   const { className } = props;
-  const { toggleTheme} = useTheme();
 
   return (
     <header className={classNames(cls.header, {}, [className])}>
@@ -25,7 +24,7 @@ export function Navbar(props: NavbarProps) {
             О нас
           </AppLink>
         </div>
-        <button onClick={toggleTheme}>Поменять тему</button>
+        <ThemeSwitcher />
       </div>
     </header>
   )
