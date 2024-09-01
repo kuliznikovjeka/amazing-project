@@ -11,4 +11,8 @@
 
   // Размеры
   --navbar-height: 70px;
+
+  --sidebar-width: 300px;
+  --sidebar-width-collapsed: 100px;
+  --sidebar-height: calc(100dvh - var(--navbar-height));
 }

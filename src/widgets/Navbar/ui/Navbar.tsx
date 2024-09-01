@@ -15,7 +15,7 @@ export function Navbar(props: NavbarProps) {
 
   return (
     <header className={classNames(cls.header, {}, [className])}>
-      <div className={cls.container}>
+      <div className={classNames(cls.wrapper, {}, [])}>
         <div className={cls.linksWrapper}>
           <AppLink theme={AppLinkTheme.PRIMARY} to={AppRoutes.MAIN}>
             Главная
