@@ -2,7 +2,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
-import { BuildPaths, TBuildMode } from './config/build/types/config';
+import { BuildEnv, BuildPaths, TBuildMode } from './config/build/types/config';
 
 const paths: BuildPaths = {
   entry: path.resolve(__dirname, 'src', 'index.ts'),
@@ -10,13 +10,19 @@ const paths: BuildPaths = {
   html: path.resolve(__dirname, 'public', 'index.html')
 }
 
-const mode: TBuildMode = 'development';
-const isDev = mode === 'development';
+export default (env: BuildEnv) => {
 
-const config: webpack.Configuration = buildWebpackConfig({
-  mode: isDev ? 'development' : 'production',
-  paths: paths,
-  isDev: isDev
-});
+  const port = env.port || '3000';
+  const mode: TBuildMode = env.mode || 'development';
 
-export default config;
+  const isDev = mode === 'development';
+
+  const config: webpack.Configuration = buildWebpackConfig({
+    mode: mode,
+    paths: paths,
+    isDev: isDev,
+    port: port
+  });
+
+  return config
+};
