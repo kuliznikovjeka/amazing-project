@@ -12,7 +12,7 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
     mode: mode,
     entry: paths.entry,
     module: {
-      rules: builLoaders()
+      rules: builLoaders(options)
     },
     devtool: isDev && 'inline-source-map',
     devServer: isDev && buildDevServer(options),
