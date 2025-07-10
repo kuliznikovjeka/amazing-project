@@ -1,7 +1,7 @@
 
 import webpack from 'webpack';
 import path from 'path';
-import { buildWebpackConfig } from './config/build/buildWebpackConfig';
+import { buildWebpackConfig } from './config/build/build-webpack-config';
 import { BuildEnv, BuildPaths, TBuildMode } from './config/build/types/config';
 
 const paths: BuildPaths = {
