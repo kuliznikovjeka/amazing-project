@@ -1,30 +1,27 @@
-import React, { Suspense } from "react";
-import { Route, Routes, Link } from "react-router-dom";
 // shared
-import { Loading } from "shared/ui/loading";
-import { ROUTER_PATHS } from "shared/constants/router-paths";
-import { useThemeContext } from "shared/theme";
-import { classNames } from "shared/lib/class-names";
-// pages
-import { MainPageLazy } from "pages/main-page";
-import { AboutPageLazy } from "pages/about-page";
-// styles
+import { classNames } from 'shared/lib/class-names';
+import { useThemeContext } from 'shared/theme';
+// local
+import { ThemeProvider } from './providers/theme-provider';
+import { RouterProvider } from './providers/router-provider';
 import "./styles/style.scss";
 
+
 export function App() {
-  const { toggleTheme, theme } = useThemeContext();
+  return (
+    <ThemeProvider>
+      <AppRoutes />
+    </ThemeProvider>
+  );
+}
+
+function AppRoutes() {
+  const { theme } = useThemeContext();
 
   return (
     <div className={classNames("app", {}, [theme])}>
-      <Link to="/">Главная</Link>
-      <Link to={`/${ROUTER_PATHS.about}`}>О нас</Link>
-      <button onClick={toggleTheme}>Переключатель темы</button>
-      <Suspense fallback={<Loading />}>
-        <Routes>
-          <Route path="/" element={<MainPageLazy />} />
-          <Route path={`/${ROUTER_PATHS.about}`} element={<AboutPageLazy />} />
-        </Routes>
-      </Suspense>
+      <RouterProvider />
     </div>
-  );
+  )
 }
+
