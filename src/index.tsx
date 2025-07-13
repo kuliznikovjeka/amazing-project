@@ -1,9 +1,7 @@
 import ReactDom from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 // app
-import { App } from "./app";
-// shared
-import { ThemeProvider } from "./shared/theme";
+import { App, ThemeProvider } from "app";
 
 const root = document.getElementById("root");
 ReactDom.render(

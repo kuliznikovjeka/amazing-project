@@ -1,6 +1,5 @@
 import React, { ReactNode, useState } from "react";
-import { THEME_LOCAL_STORAGE_KEY, ThemeContext, ThemeContextValues } from "./theme-context";
-import { TThemeValues } from "../model/theme-variants";
+import { TThemeValues,  THEME_LOCAL_STORAGE_KEY, ThemeContext, ThemeContextValues  } from "shared/theme";
 
 interface ThemeProviderProps {
   children: ReactNode;
