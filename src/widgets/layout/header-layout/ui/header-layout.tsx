@@ -1,35 +1,38 @@
-import React from 'react'
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
 // shared
-import { useThemeContext } from 'shared/theme';
-import { ROUTER_PATHS } from 'shared/constants/router-paths';
+import { useThemeContext } from "shared/theme";
+import { ROUTER_PATHS } from "shared/constants/router-paths";
+import { classNames } from "shared/lib/class-names";
+import { AppLink } from "shared/ui/app-link";
 // local
-import styles from './header-layout.module.scss';
+import styles from "./header-layout.module.scss";
 
-export function HeaderLayout() {
+interface HeaderLayoutProps {
+  UNSAFE_classname?: string;
+}
+
+export function HeaderLayout(props: HeaderLayoutProps) {
   const { toggleTheme, theme } = useThemeContext();
 
   return (
     <>
-      <header className={styles.header}>
+      <header className={classNames(styles.header, {}, [props.UNSAFE_classname])}>
         <div className={styles.header__container}>
-          <a href='#'>
-            Лого
-          </a>
+          <a href="#">Лого</a>
           <nav>
             <ul className={styles.header__list}>
               <li>
-                <Link to="/">Главная</Link>
+                <AppLink to="/">Главная</AppLink>
               </li>
               <li>
-                <Link to={`/${ROUTER_PATHS.about}`}>О нас</Link>
+                <AppLink to={`/${ROUTER_PATHS.about}`}>О нас</AppLink>
               </li>
             </ul>
           </nav>
-        <button onClick={toggleTheme}>Переключатель темы</button>
+          <button onClick={toggleTheme}>Переключатель темы</button>
         </div>
       </header>
       <Outlet />
     </>
-  )
+  );
 }
