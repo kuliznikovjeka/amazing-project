@@ -4,6 +4,8 @@ import { useThemeContext } from "shared/theme";
 import { ROUTER_PATHS } from "shared/constants/router-paths";
 import { classNames } from "shared/lib/class-names";
 import { AppLink } from "shared/ui/app-link";
+// widgets
+import { ThemeSwitcher } from "widgets/theme-switcher";
 // local
 import styles from "./header-layout.module.scss";
 
@@ -12,8 +14,6 @@ interface HeaderLayoutProps {
 }
 
 export function HeaderLayout(props: HeaderLayoutProps) {
-  const { toggleTheme, theme } = useThemeContext();
-
   return (
     <>
       <header className={classNames(styles.header, {}, [props.UNSAFE_classname])}>
@@ -29,7 +29,7 @@ export function HeaderLayout(props: HeaderLayoutProps) {
               </li>
             </ul>
           </nav>
-          <button onClick={toggleTheme}>Переключатель темы</button>
+          <ThemeSwitcher />
         </div>
       </header>
       <Outlet />
