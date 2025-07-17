@@ -1,5 +1,7 @@
 .header {
   background: var(--inverted-bg-color);
+  padding: var(--container-padding-x);
+  border-radius: 0px 0px 12px 12px;
 }
 
 .header__container {
@@ -7,9 +9,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 20px;
+  height: var(--header-height);
 }
 
 .header__list {

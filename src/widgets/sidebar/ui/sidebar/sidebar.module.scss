@@ -1,0 +1,21 @@
+.sidebar {
+  height: calc(100vh - var(--header-height) - var(--app-wrapper-margin-bottom) - var(--app-wrapper-margin-top));
+  width: var(--sidebar-not-expanded-width);
+  background: var(--inverted-bg-color);
+  transition: width 0.5s;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.expanded {
+  width: var(--sidebar-expanded-width);
+}

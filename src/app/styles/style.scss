@@ -6,6 +6,19 @@
 .app {
   font: var(--font-m);
   color: var(--text-color);
-  background-color: var(--bg-color);
+  background-color: var(--canvas);
   height: 100vh;
+}
+
+.app-container {
+  max-width: var(--container-width);
+  padding: var(--container-padding-x);
+  margin: 0 auto;
+}
+
+.app-wrapper {
+  display: flex;
+  gap: 20px;
+  margin-top: var(--app-wrapper-margin-top);
+  margin-bottom: var(--app-wrapper-margin-bottom);
 }

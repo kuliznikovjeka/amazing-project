@@ -9,5 +9,13 @@
   --font-line-l: 32px;
   --font-m: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
+  --app-wrapper-margin-top: 20px;
+  --app-wrapper-margin-bottom: 20px;
+
   --container-width: 1400px;
+  --container-padding-x: 0px 20px;
+
+  --header-height: 80px;
+  --sidebar-expanded-width: 400px;
+  --sidebar-not-expanded-width: 120px;
 }
