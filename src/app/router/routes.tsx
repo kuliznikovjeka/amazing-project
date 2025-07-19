@@ -1,16 +1,16 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from 'react-router-dom';
 // shared
-import { ROUTER_PATHS } from "shared/constants/router-paths";
+import { ROUTER_PATHS } from 'shared/constants/router-paths';
 // pages
-import { AboutPageLazy } from "pages/about-page";
-import { MainPageLazy } from "pages/main-page";
+import { AboutPageLazy } from 'pages/about-page';
+import { MainPageLazy } from 'pages/main-page';
 // local
-import { SuspenseWrapper } from "./ui/suspense-wrapper";
-import { AppContent } from "../app";
+import { SuspenseWrapper } from './ui/suspense-wrapper';
+import { AppContent } from '../app';
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <AppContent />,
     children: [
       {

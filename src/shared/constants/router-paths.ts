@@ -1,3 +1,3 @@
 export const ROUTER_PATHS = {
-  about: "about",
+  about: 'about',
 };

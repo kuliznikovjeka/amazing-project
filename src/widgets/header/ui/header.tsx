@@ -1,9 +1,9 @@
 // shared
-import { ROUTER_PATHS } from "shared/constants/router-paths";
-import { classNames } from "shared/lib/class-names";
-import { AppLink } from "shared/ui/app-link";
+import { ROUTER_PATHS } from 'shared/constants/router-paths';
+import { classNames } from 'shared/lib/class-names';
+import { AppLink } from 'shared/ui/app-link';
 // local
-import styles from "./header.module.scss";
+import styles from './header.module.scss';
 
 interface HeaderProps {
   UNSAFE_classname?: string;

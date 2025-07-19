@@ -9,10 +9,10 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
   const { mode, paths, isDev } = options;
 
   const config: webpack.Configuration = {
-    mode: mode,
+    mode,
     entry: paths.entry,
     module: {
-      rules: builLoaders(options)
+      rules: builLoaders(options),
     },
     devtool: isDev && 'inline-source-map',
     devServer: isDev && buildDevServer(options),
@@ -20,10 +20,10 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
     output: {
       path: paths.build,
       filename: '[name].[contenthash].js',
-      clean: true
+      clean: true,
     },
-    plugins: buildPlugins(options)
-  }
+    plugins: buildPlugins(options),
+  };
 
-  return config
-}
+  return config;
+};
