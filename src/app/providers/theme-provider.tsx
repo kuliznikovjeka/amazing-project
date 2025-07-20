@@ -28,7 +28,7 @@ export function ThemeProvider(props: ThemeProviderProps) {
       setTheme,
       toggleTheme,
     }),
-    [],
+    [theme],
   );
 
   return <ThemeContext.Provider value={providerValues}>{props.children}</ThemeContext.Provider>;

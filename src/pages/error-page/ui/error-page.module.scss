@@ -1,0 +1,16 @@
+.errorPage {
+  height: calc(100vh - var(--app-wrapper-margin-top) - var(--app-wrapper-margin-bottom));
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: var(--font-l);
+  color: var(--primary-color);
+}
+
+.block {
+  display: block;
+}
