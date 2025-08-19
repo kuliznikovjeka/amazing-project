@@ -1,0 +1,13 @@
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.title {
+  font: var(--font-l);
+  color: var(--accent-color);
+}

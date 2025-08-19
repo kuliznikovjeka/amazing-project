@@ -7,12 +7,12 @@ import { AboutPageLazy } from 'pages/about-page';
 import { ErrorPage } from 'pages/error-page';
 // local
 import { SuspenseWrapper } from './ui/suspense-wrapper';
-import { AppContent } from '../app';
+import { AppContentWithProviders } from '../app';
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <AppContent />,
+    element: <AppContentWithProviders />,
     errorElement: <ErrorPage />,
     children: [
       {

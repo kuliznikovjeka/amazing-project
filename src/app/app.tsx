@@ -8,17 +8,14 @@ import { Sidebar } from 'widgets/sidebar';
 // local
 import { ThemeProvider } from './providers/theme-provider';
 import { RouterProvider } from './providers/router-provider';
+import { ErrorBoundaryProvider } from './providers/error-boundary';
 import './styles/style.scss';
 
 export function App() {
-  return (
-    <ThemeProvider>
-      <RouterProvider />
-    </ThemeProvider>
-  );
+  return <RouterProvider />;
 }
 
-export function AppContent() {
+function AppContent() {
   const { theme } = useThemeContext();
 
   return (
@@ -31,5 +28,15 @@ export function AppContent() {
         </div>
       </div>
     </div>
+  );
+}
+
+export function AppContentWithProviders() {
+  return (
+    <ErrorBoundaryProvider>
+      <ThemeProvider>
+        <AppContent />
+      </ThemeProvider>
+    </ErrorBoundaryProvider>
   );
 }
